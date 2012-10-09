@@ -25,11 +25,11 @@ echo "<br>";
 
 //$row = $result->fetch_assoc();
 
-while($row = mysql_fetch_array($result))
-  {
+while($row = $result->fetch_assoc())
+{
   echo $row['name'];
   echo "<br>";
-  }
+}
 
 //echo $row['name'];
 

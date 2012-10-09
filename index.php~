@@ -1,5 +1,7 @@
+
+<html><head><title>index - testing mysql conn</title></head><body>marg\n
 <?php
-echo "marg";
+
 $conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room');
 if(!$conn->connect_errno){
    echo "connection failed";
@@ -7,7 +9,7 @@ if(!$conn->connect_errno){
 
 echo "connection made";
 
-if(!$conn->query("INSERT INTO users(name, password) VALUES ('myname', 'pw')"))) {
+if(!$conn->query("INSERT INTO users(name, password) VALUES ('myname', 'pw')")) {
 	echo "insert failed";
 }
 

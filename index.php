@@ -1,7 +1,16 @@
 <?php
 
 $conn =  new mysqli('http://ec2-54-243-183-105.compute-1.amazonaws.com', 'room_user', 'password', 'room', '');
-$result = $conn->query("SELECT name FROM users;");
+if($conn->connect_errno){
+   echo "connection failed";
+}
+
+$result = $conn->query("SELECT name FROM users");
+
+if(!$result){
+   echo "query failed";
+}
+
 $row = $result->fetch_assoc();
 echo $row['name'];
 

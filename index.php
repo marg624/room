@@ -1,19 +1,25 @@
 <?php
 
-$conn =  new mysqli('54.243.183.105:3306', 'room_user', 'password', 'room');
+$conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room');
 if($conn->connect_errno){
    echo "connection failed";
 }
 
+echo "connection made";
+
 if(!$conn->query("INSERT INTO users(name, password) VALUES ('myname', 'pw')"))) {
 	echo "insert failed";
 }
+
+echo "query insert worked";
 
 $result = $conn->query("SELECT name FROM users");
 
 if(!$result){
    echo "query failed";
 }
+
+echo "query select worked";
 
 $row = $result->fetch_assoc();
 echo $row['name'];

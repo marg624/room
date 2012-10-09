@@ -5,9 +5,13 @@ if($conn->connect_errno){
    echo "connection failed";
 }
 
+echo "connection made";
+
 if(!$conn->query("INSERT INTO users(name, password) VALUES ('myname', 'pw')"))) {
 	echo "insert failed";
 }
+
+echo "query worked";
 
 $result = $conn->query("SELECT name FROM users");
 

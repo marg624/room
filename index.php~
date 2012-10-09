@@ -26,7 +26,7 @@ echo "<br>";
 $row = $result->fetch_assoc();
 echo $row['name'];
 
-$conn -> close;
+$conn -> close();
 
 /*$conn = mysql_connect('54.243.183.105', 'room_user', 'password');
 

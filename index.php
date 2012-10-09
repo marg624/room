@@ -1,27 +1,27 @@
 
 
 <?php
-echo "<html><head><title>index - testing mysql conn</title></head><body>marg\n";
+echo "<html><head><title>index - testing mysql conn</title></head><body>";
 $conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room');
-if(!$conn->connect_errno){
+if($conn->connect_errno){
    echo "connection failed";
-}
+} else echo "connection made";
 
-echo "connection made";
+echo "<br>";
 
 if(!$conn->query("INSERT INTO users(name, password) VALUES ('myname', 'pw')")) {
 	echo "insert failed";
-}
+} else echo "query insert worked";
 
-echo "query insert worked";
+echo "<br>";
 
 $result = $conn->query("SELECT name FROM users");
 
 if(!$result){
    echo "query failed";
-}
+} else echo "query select worked";
 
-echo "query select worked";
+echo "<br>";
 
 $row = $result->fetch_assoc();
 echo $row['name'];

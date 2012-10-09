@@ -1,5 +1,5 @@
 <?php
-echo "marg";
+echo "<html><head><title>index - testing mysql conn</title></head><body>marg";
 $conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room');
 if(!$conn->connect_errno){
    echo "connection failed";

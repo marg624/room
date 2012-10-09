@@ -1,6 +1,6 @@
 <?php
 
-$conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room', '');
+$conn =  new mysqli('http://ec2-54-243-183-105.compute-1.amazonaws.com', 'room_user', 'password', 'room', '');
 $result = $conn->query("SELECT name FROM users;");
 $row = $result->fetch_assoc();
 echo $row['name'];

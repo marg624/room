@@ -1,5 +1,11 @@
 <?php
-$conn = mysql_connect('54.243.183.105', 'room_user', 'password');
+
+$conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room', '');
+$result = $conn->query("SELECT name FROM users;");
+$row = $result->fetch_assoc();
+echo $row['name'];
+
+/*$conn = mysql_connect('54.243.183.105', 'room_user', 'password');
 
 if(!$conn) {
    die('no connection');	
@@ -17,7 +23,7 @@ $nresult = mysql_num_rows($result);
 $row = mysql_fetch_array($result) or die(mysql_error());
 
 echo '$nresult returned:';
-echo $row['name'];
+echo $row['name']; */
 ?>
 
 

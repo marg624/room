@@ -1,7 +1,7 @@
 <?php
-
+echo "marg";
 $conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room');
-if($conn->connect_errno){
+if(!$conn->connect_errno){
    echo "connection failed";
 }
 

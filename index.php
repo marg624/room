@@ -1,18 +1,22 @@
 <?php
-mysql_connect('54.243.183.105', 'room_user', 'password') or die(mysql_error());
+$conn = mysql_connect('54.243.183.105', 'room_user', 'password');
 
-echo "connection successful\n";
+if(!$conn) {
+   die('no connection');	
+}
 
-mysql_select_db("room") or die(mysql_error());
+echo 'connection successful\n';
 
-$result = mysql_query("SELECT * FROM users") or die(mysql_error());
+mysql_select_db('room') or die(mysql_error());
 
-echo "after result check\n";
+$result = mysql_query('SELECT * FROM users') or die(mysql_error());
+
+echo 'after result check';
 $nresult = mysql_num_rows($result);
 
 $row = mysql_fetch_array($result) or die(mysql_error());
 
-echo "$nresult returned:\n";
+echo '$nresult returned:';
 echo $row['name'];
 ?>
 

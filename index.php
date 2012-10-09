@@ -4,8 +4,11 @@ if (!$conn) {
     die('Could not connect: ' . mysql_error());
 }
 echo 'connection successful';
-$result = $conn->mysql_query("SELECT * FROM users")
-	or die ("Unable to run query");
+$result = $conn->mysql_query("SELECT * FROM users");
+if(!$result) {
+	die("Unable to run query");
+}
+echo "after result check";
 $nresult = mysql_num_rows($result);
 $row = $result->fetch_assoc();
 echo '$nresult returned:';

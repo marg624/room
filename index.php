@@ -1,5 +1,5 @@
 <?php
-$conn = mysql_connect('54.243.183.105', 'room_user', 'password');
+$conn = mysql_connect('54.243.183.105', 'room_user'@'localhost', 'password');
 
 if(!$conn) {
    die('no connection');	

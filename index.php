@@ -5,7 +5,7 @@ if($conn->connect_errno){
    echo "connection failed";
 }
 
-$result = $conn->query("SELECT name FROM users");
+$result = $conn->query("SELECT name FROM users;");
 
 if(!$result){
    echo "query failed";

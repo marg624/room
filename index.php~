@@ -8,7 +8,7 @@ if($conn->connect_errno){
 $result = $conn->query("SELECT name FROM users");
 
 if(!$result){
-   echo "connection failed";
+   echo "query failed";
 }
 
 $row = $result->fetch_assoc();

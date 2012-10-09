@@ -9,7 +9,7 @@ if($conn->connect_errno){
 
 echo "<br>";
 
-if(!$conn->query("INSERT INTO users(name, password) VALUES ('myname', 'pw')")) {
+if(!$conn->query("INSERT INTO users(name, password) VALUES ('melissa', 'pw')")) {
 	echo "insert failed";
 } else echo "query insert worked";
 
@@ -23,8 +23,15 @@ if(!$result){
 
 echo "<br>";
 
-$row = $result->fetch_assoc();
-echo $row['name'];
+//$row = $result->fetch_assoc();
+
+while($row = mysql_fetch_array($result))
+  {
+  echo $row['name'];
+  echo "<br>";
+  }
+
+//echo $row['name'];
 
 $conn -> close();
 

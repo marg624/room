@@ -2,7 +2,7 @@
 
 <?php
 echo "<html><head><title>index - testing mysql conn</title></head><body>";
-$conn =  new mysqli('54.243.183.105', 'room_user', 'password', 'room');
+$conn =  new mysqli('54.243.183.105:3306', 'room_user', 'password', 'room');
 if($conn->connect_errno){
    echo "connection failed";
 } else echo "connection made";

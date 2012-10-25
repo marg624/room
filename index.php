@@ -12,7 +12,7 @@ echo "name: $n,";
 $p = $_POST["pw"];
 echo "pw: $p<br>";
 
-if(!$conn->query("INSERT INTO users(name, password) VALUES ($n, $p)")) {
+if(!$conn->query("INSERT INTO users(name, password) VALUES ('$n', '$p')")) {
 	echo "insert failed";
 } else echo "Welcome $n !";
 

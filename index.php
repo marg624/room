@@ -10,7 +10,7 @@ if($conn->connect_errno){
 var n = $_POST["name"];
 var p = $_POST["pw"];
 
-if(!$conn->query("INSERT INTO users(name, password) VALUES (n, pw)")) {
+if(!$conn->query("INSERT INTO users(name, password) VALUES (n, p)")) {
 	echo "insert failed";
 } else echo "Welcome $_POST['name'] !";
 

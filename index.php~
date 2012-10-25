@@ -1,17 +1,18 @@
 
 
 <?php
-echo "<html><head><title>index - testing mysql conn</title></head><body>";
+echo "<html><head><title>Roommate Finder</title></head><body>";
 $conn =  new mysqli('54.243.183.105', 'room_user_all', 'password', 'room',3306);
 if($conn->connect_errno){
-   echo "connection failed";
-} else echo "connection made";
+   echo "connection failed<br>";
+}
 
-echo "<br>";
+var n = $_POST["name"];
+var p = $_POST["pw"];
 
-if(!$conn->query("INSERT INTO users(name, password) VALUES ('melissa', 'pw')")) {
+if(!$conn->query("INSERT INTO users(name, password) VALUES (n, pw)")) {
 	echo "insert failed";
-} else echo "query insert worked";
+} else echo "Welcome $_POST['name'] !";
 
 echo "<br>";
 
@@ -19,9 +20,9 @@ $result = $conn->query("SELECT name FROM users");
 
 if(!$result){
    echo "query failed";
-} else echo "query select worked";
+} 
 
-echo "<br><br>";
+echo "<br><br>All users:<br>";
 
 //$row = $result->fetch_assoc();
 

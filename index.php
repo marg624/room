@@ -7,12 +7,12 @@ if($conn->connect_errno){
    echo "connection failed<br>";
 }
 
-$n = $_POST["name"];
-$p = $_POST["pw"];
+$n = $_REQUEST["name"];
+$p = $_REQUEST["pw"];
 
 if(!$conn->query("INSERT INTO users(name, password) VALUES ($n, $p)")) {
 	echo "insert failed";
-} else echo "Welcome $_POST['name'] !";
+} else echo "Welcome $_REQUEST['name'] !";
 
 echo "<br>";
 

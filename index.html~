@@ -25,16 +25,18 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
     }
   }
-xmlhttp.open("GET","index.php?q="+str,true);
+xmlhttp.open("GET","show.php?q="+str,true);
 xmlhttp.send();
 }
 </script>
 </head>
 <body>
 
-<h3>Start typing a name in the input field below:</h3>
-<form action=""> 
-First name: <input type="text" id="txt1" onkeyup="showHint(this.value)" />
+<h3>Enter username/password to login (will create account if username doesn't exist):</h3>
+<form action="index.php" method="post"> 
+Username: <input type="text" id="name" onkeyup="showHint(this.value)" /> <br>
+Password: <input type="password" id="pw" /> <br> 
+<input type="submit" value="Submit">
 </form>
 <p>Suggestions: <span id="txtHint"></span></p> 
 

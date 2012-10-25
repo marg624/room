@@ -34,9 +34,9 @@ xmlhttp.send();
 
 <h3>Enter username/password to login (will create account if username doesn't exist):</h3>
 <form action="index.php" method="GET"> 
-Username: <input type="text" id="name" onkeyup="showHint(this.value)" /> <br>
-Password: <input type="text" id="pw" /> <br> 
-<input type="submit" value="Submit">
+Username: <input type="text" id="name" name="name" onkeyup="showHint(this.value)" /> <br>
+Password: <input type="text" id="pw" name="pw"/> <br> 
+<input type="submit" value="submit">
 </form>
 <p>Suggestions: <span id="txtHint"></span></p> 
 

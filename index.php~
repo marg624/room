@@ -5,10 +5,12 @@ echo "<html><head><title>Roommate Finder</title></head><body>";
 $conn =  new mysqli('54.243.183.105', 'room_user_all', 'password', 'room',3306);
 if($conn->connect_errno){
    echo "connection failed<br>";
-}
+} else echo "connection worked";
 
-$n = $_REQUEST["name"];
-$p = $_REQUEST["pw"];
+$n = $_POST["name"];
+echo "name: $n";
+$p = $_POST["pw"];
+echo "pw $p";
 
 if(!$conn->query("INSERT INTO users(name, password) VALUES ($n, $p)")) {
 	echo "insert failed";

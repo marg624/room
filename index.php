@@ -8,7 +8,9 @@ if($conn->connect_errno){
 }
 
 $n = $_REQUEST["name"];
+echo $n;
 $p = $_REQUEST["pw"];
+echo $p;
 
 if(!$conn->query("INSERT INTO users(name, password) VALUES ($n, $p)")) {
 	echo "insert failed";
